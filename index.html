@@ -3,54 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="css\styles.css">
-
+    <title>Julius's Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="margin">
-    <div>
-        <p class="title" style="margin-bottom:2px;">Hi there,</p>
-        <p class="normal_text" style="margin-top:0%;">I am <i><b>Julius</b></i>, a lad in India. This is my Portfolio.</p>
-    </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#about-me" class="nav-link">About Me</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#connect-with-me" class="nav-link">Connect With Me</a>
+        </div>
+    </nav>
 
-    <hr>
-    <div id="About_me">
-        <img src="images\julius_dp.png" alt="DP" style="width: 150px;">
-        <p class="head2">About me</p>
-        <p class="normal_text">&nbsp;&nbsp;&nbsp;&nbsp;I was raised in Coimbatore, a city in Tamil Nadu, while my family heritage traces back to Kerala. I graduated from high school in <i>2024</i> (Class 12, CBSE, India) and am currently pursuing a <strong>B.Tech in Computer Science with a specialization in Artificial Intelligence and Machine Learning (AIML)</strong> at Christ University, Bangalore.</p>
-        <p class="normal_text"></p>
-    </div>
-    <hr>
-    <div>
-        <p class="head3">My soon to be <b>Skills</b></p>
-        <ul style="margin-left: 30px;" class="normal_text">
-            <li>Python</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C++</li>
-            <li>HTML</li>
-        </ul>
-    </div>
-    <hr>
-    <div>
-        <p class="head3">My <b>Projects</b></p>
-        <ul style="margin-left: 30px;" class="normal_text">
-            <li><a href="https://juliusdude.github.io/my-portfolio-web" style="text-decoration: none;">My Portfolio</a></li>
-        </ul>
-    </div>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h2>Hello!</h2>
+            <p class="intro-text">I am <b>Julius</b>, a lad in India. This is my Portfolio.</p>
+        </div>
+        <div class="hero-image">
+            <img src="images/julius_dp.png" alt="Julius's Profile Picture">
+        </div>
+    </header>
 
-    
-</div>
-<footer class="footer">
-    <p class="head4"><b>Socials</b></p>
-    <p>Follow me on:
-        <a href="https://www.linkedin.com/in/julius-b-thomas-462ba3314" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/JuliusDude" target="_blank">GitHub</a> |
-        <a href="https://x.com/LOLgod4real" target="_blank">X/Twitter</a>
-    </p>
-</footer>
+    <hr class="full-width-hr">
 
+    <main class="main-content">
+        <section id="about-me" class="section-spacing">
+            <h3>About me</h3>
+            <p class="normal-text">&nbsp;&nbsp;&nbsp;&nbsp;I was raised in Coimbatore, a city in Tamil Nadu, while my family heritage traces back to Kerala. I graduated from high school in <i>2024</i> (Class 12, CBSE/State Board, India) and am currently pursuing a <strong>B.Tech in Computer Science with a specialization in Artificial Intelligence and Machine Learning (AIML)</strong> at Christ University, Bangalore.</p>
+        </section>
+
+        <hr class="full-width-hr">
+
+        <section id="skills" class="section-spacing">
+            <h3>My soon to be <b>Skills</b></h3>
+            <ul class="normal-text skill-list">
+                <li>Python</li>
+                <li>Java</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>HTML</li>
+            </ul>
+        </section>
+
+        <hr class="full-width-hr">
+
+        <section id="projects" class="section-spacing">
+            <h3>My <b>Projects</b></h3>
+            <ul class="normal-text project-list">
+                <li><a href="https://juliusdude.github.io/my-portfolio-web" target="_blank">My Portfolio</a></li>
+                </ul>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo" id="connect-with-me">
+        <h4><b>Socials</b></h4>
+        <p>Follow me on:
+            <a href="https://www.linkedin.com/in/julius-b-thomas-462ba3314" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/JuliusDude" target="_blank">GitHub</a> |
+            <a href="https://x.com/LOLgod4real" target="_blank">X/Twitter</a>
+        </p>
+    </footer>
 
 </body>
 </html>
