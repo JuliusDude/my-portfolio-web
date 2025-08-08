@@ -1,62 +1,237 @@
-body {
-    background-color: #fffaf0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0px;
+/* --- CSS Variables for Color Palette --- */
+:root {
+    --primary-brand-color: #fd7e14; /* Warm, inviting orange */
+    --accent-color: #ffc107;      /* Soft, warm yellow */
+    --background-cream: #fffaf0;    /* Light cream background */
+    --text-dark-gray: #495057;    /* Dark gray with a hint of warmth for body text */
+    --text-medium-gray: #adb5bd;  /* Medium cool gray for secondary text/borders */
+    --heading-color: #3a4045;     /* Darker gray for headings */
+    --footer-background: #f1f1f1; /* Light gray for footer */
+    --link-color: #0077b5;        /* Default LinkedIn blue for links */
+    --link-hover-color: #005582;  /* Darker blue for link hover */
 }
 
-footer.footer {
-    margin-top: auto;
-    background-color: #f1f1f1;
-    padding: 15px 20px;
-    text-align: center;
+/* --- Global Styles --- */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+}
+
+body {
+    background-color: var(--background-cream);
     font-family: Arial, Helvetica, sans-serif;
-    color: #333;
+    color: var(--text-dark-gray);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+    line-height: 1.6;
+
+    text-align: left;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: var(--primary-brand-color); /* Matches your brand color */
+    padding: 15px 0;
+    position: sticky; /* Makes the navbar stick to the top when scrolling */
+    top: 0; /* Ensures it sticks to the very top */
+    z-index: 1000; /* Ensures it stays above other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Center links */
+    flex-wrap: wrap; /* Allow links to wrap on small screens */
+    gap: 25px; /* Space between links */
+    padding: 0 20px; /* Padding for small screens */
+}
+
+.nav-link {
+    color: white; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+    color: white;
+}
+
+/* --- Full-width Horizontal Rule --- */
+.full-width-hr {
+    border: none;
+    border-top: 1px solid var(--text-medium-gray);
+    margin: 50px 0; /* Adjust spacing as needed, no side margins */
+}
+
+/* --- Main Content Area Styling --- */
+.main-content {
+    max-width: 900px; /* Limits content width for readability */
+    margin: 0 auto; /* Centers content */
+    padding: 0 20px; /* Adds padding on the sides for smaller screens */
+    flex-grow: 1; /* Allows main content to grow and push footer down */
+    text-align: left; /* Explicitly ensure text aligns left within this container */
+}
+
+/* New class for consistent section spacing */
+/* This padding will be applied within the max-width of main-content */
+.section-spacing {
+    padding-top: 50px; /* Space above each section */
+    padding-bottom: 20px; /* Space below content within the section */
+}
+
+/* --- Hero Section (Hello! & Picture) --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers items in column layout */
+    text-align: center; /* This centers text in column layout */
+    padding: 40px 20px;
+    gap: 30px;
+    max-width: 900px;
+    margin: 20px auto 40px auto; /* Keeps a margin below the hero section */
+}
+
+.hero-content h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3.5em;
+    color: var(--primary-brand-color);
+    margin-bottom: 5px;
+}
+
+.intro-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    color: var(--text-dark-gray);
+    margin-top: 0;
+}
+
+.hero-image {
+    width: 250px; /* Increased image size */
+    height: 250px; /* Increased image size */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--primary-brand-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Media query for larger screens (side-by-side layout) */
+@media (min-width: 768px) {
+    .hero-section {
+        flex-direction: row;
+        text-align: left; /* Align text to the left when side-by-side */
+        justify-content: center;
+        padding: 60px 20px;
+    }
+
+    .hero-image {
+        margin-left: 40px;
+    }
+}
+
+/* --- Heading Styles --- */
+h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left; /* Ensure headings align left */
+}
+
+h4 { /* For footer heading */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* --- General Text Styles --- */
+.normal-text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-dark-gray);
+    padding: 0;
+    margin-bottom: 1em;
+    text-align: left; /* Ensure normal text aligns left */
+}
+
+/* Indent for about me paragraph */
+#about-me .normal-text {
+    text-indent: 2em;
+    padding: 0 10px;
+}
+
+/* --- List Styles (Skills & Projects) --- */
+.skill-list,
+.project-list {
+    margin-left: 20px;
+    padding-left: 0;
+    list-style-type: disc;
+    text-align: left; /* Ensure lists align left */
+}
+
+.skill-list li,
+.project-list li {
+    margin-bottom: 8px;
+}
+
+.project-list a {
+    text-decoration: none;
+    color: var(--primary-brand-color);
+    font-weight: bold;
+}
+
+.project-list a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+/* --- Footer Styles --- */
+.footer {
+    background-color: var(--footer-background);
+    padding: 20px;
+    text-align: center; /* Footer content remains centered */
+    color: var(--text-dark-gray);
+    border-top: 1px solid var(--text-medium-gray);
+    margin-top: 50px; /* Add some space above the footer */
+}
+
+.footer p {
+    margin: 5px 0;
 }
 
 .footer a {
-    margin: 0 8px;
+    margin: 0 10px;
     text-decoration: none;
-    color: #0077b5; /* Default LinkedIn color */
+    color: var(--link-color);
+    font-weight: bold;
 }
 
 .footer a:hover {
-    color: #005582;
+    color: var(--link-hover-color);
+    text-decoration: underline;
 }
-        .title{
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size:50px;
-            margin: 5px;
-            font-weight: 500;
-            color: #FF6B6B;
-        }
-        .normal_text{
-            font-family: Arial, Helvetica, sans-serif;
-            color: #495057;
-            padding: 5px;
-        }
-        .head2{
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size:30px;
-            margin: 5px;
-            font-weight: 400;
-            color: #3a4045;
-        }
-        .head3{
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size:25px;
-            margin: 5px;
-            font-weight: 400;
-            color: #3a4045;
-        }
-        .head4{
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size:20px;
-            margin: 5px;
-            font-weight: 400;
-            color: #3a4045;
-        }
-        .margin{
-            margin: 10px;
-        }
+
+/* Responsive adjustments for footer links */
+@media (max-width: 480px) {
+    .footer a {
+        display: block;
+        margin: 5px 0;
+    }
+}
