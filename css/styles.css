@@ -5,7 +5,7 @@
     --background-cream: #fffaf0;    /* Light cream background */
     --text-dark-gray: #495057;    /* Dark gray with a hint of warmth for body text */
     --text-medium-gray: #adb5bd;  /* Medium cool gray for secondary text/borders */
-    --heading-color: #3a4045;     /* Darker gray for headings */
+    --heading-color: #3a4045;      /* Darker gray for headings */
     --footer-background: #f1f1f1; /* Light gray for footer */
     --link-color: #0077b5;        /* Default LinkedIn blue for links */
     --link-hover-color: #005582;  /* Darker blue for link hover */
@@ -25,8 +25,8 @@ body {
     min-height: 100vh; 
     margin: 0;
     line-height: 1.6;
-
     text-align: left;
+    overflow-x: hidden; /* Prevents horizontal scrollbar caused by the full-width HR */
 }
 
 /* --- Navigation Bar --- */
@@ -69,7 +69,13 @@ body {
 .full-width-hr {
     border: none;
     border-top: 1px solid var(--text-medium-gray);
-    margin: 50px 0; /* Adjust spacing as needed, no side margins */
+    margin: 50px 0;
+    
+    /* --- Styles to make it span the full viewport width --- */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
 }
 
 /* --- Main Content Area Styling --- */
@@ -81,7 +87,6 @@ body {
     text-align: left; /* Explicitly ensure text aligns left within this container */
 }
 
-/* New class for consistent section spacing */
 /* This padding will be applied within the max-width of main-content */
 .section-spacing {
     padding-top: 50px; /* Space above each section */
